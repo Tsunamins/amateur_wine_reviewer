@@ -21,11 +21,24 @@ class UsersController < ApplicationController
         #return redirect_to root_path unless logged_in?
           @user = User.find_by(id: params[:id]) 
           
-      end
+    end
+
+    def index 
+    end 
+
+    def edit
+        @user = User.find(params[:id])
+    end
+    
+    def update
+        @user = User.find(params[:id])
+        @user.update(title: params[:user][:email], description: params[:user][:favorite_wine])
+        redirect_to user_path(@user)
+    end
 
     def user_params
         params.require(:user).permit([:username, :password, :email, :favorite_wine])
         #all attrib must be here or they won't be saved
-      end
+    end
 
 end 
