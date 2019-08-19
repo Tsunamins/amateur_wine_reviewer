@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AmateurWineReviewer</title>
+    <title>The Amateur Wine Reviewer</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,9 +10,33 @@
   </head>
 
   <body>
-  <div>
-    <p>Temporary Log Button <%= link_to "Log Out", logout_path %></p>
+  
+  <div id="navbar">
+
+      <div id="menu" > 
+        <ul>
+          <li>Reviewers</li>
+          <li>Wines</li>
+          <li>Reviews</li>
+        </ul>
+      </div>
+
+      <div id="title">
+        <h1>The Amateur Wine Reviewer</h1>
+      </div>
+
+      <div id="usermenu">
+        <% if logged_in? %>
+          <ul>
+            <li>
+              <ul><%= link_to  @user.username, user_path(@user) %></ul>
+              <ul><%= link_to "Log Out", logout_path %></ul>
+            </li>
+        <%  end %>
+      </div>
   </div>
+  <br>
+  
 
     <%= yield %>
   </body>

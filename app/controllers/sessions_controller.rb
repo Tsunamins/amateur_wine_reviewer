@@ -14,7 +14,8 @@ class SessionsController < ApplicationController
                 #change to index view redirect_to controller: 'users', action: 'index'
                 #change to show view with redirect_to user_path(@user)
             else
-                return redirect_to(controller: 'sessions', action: 'new')
+                render :new
+                #return redirect_to(controller: 'sessions', action: 'new')
             end    
       end
 
