@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+    skip_before_action :user_not_logged_in
+    
     def new
         
     end
@@ -8,13 +10,16 @@ class SessionsController < ApplicationController
         @user = User.find_by(username: params[:user][:username])
             if @user && @user.authenticate(params[:user][:password])
                 session[:user_id] = @user.id
+                binding.pry
                 redirect_to controller: 'users', action: 'index'
+                #change to show view with redirect_to user_path(@user)
             else
                 return redirect_to(controller: 'sessions', action: 'new')
             end    
       end
 
       def logout
+        
         session.delete :user_id
         redirect_to root_path
       end

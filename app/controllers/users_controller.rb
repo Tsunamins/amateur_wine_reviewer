@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    skip_before_action :user_not_logged_in, only: [:new, :create]
+    
     def new 
         @user = User.new
     end 
@@ -24,6 +26,7 @@ class UsersController < ApplicationController
     end
 
     def index 
+        @user = User.find_by(id: params[:id])
     end 
 
     def edit
