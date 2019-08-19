@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :user_not_logged_in, only: [:new, :create]
+    skip_before_action :user_not_logged_in, only: [:new, :create, :edit, :update]
     
     def new 
         @user = User.new
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
     def show
         
-          @user = User.find_by(id: params[:id]) 
+        @user = User.find_by(id: params[:id]) 
           
     end
 
@@ -30,13 +30,16 @@ class UsersController < ApplicationController
     end 
 
     def edit
-        @user = User.find_by(id: params[:id])
+        @user = current_user
+        
     end
     
     def update
-        @user = User.find_by(id: params[:id])
+        @user = current_user
+             
         @user.update(email: params[:user][:email], favorite_wine: params[:user][:favorite_wine])
         redirect_to user_path(@user)
+         
     end
 
     def user_params
