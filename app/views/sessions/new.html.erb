@@ -6,7 +6,8 @@
     <%= password_field_tag :"user[password]", nil, placeholder: "Password" %>
     <%= submit_tag :Login %>
     <p> - or - </p>
-    <%= link_to "Log In with Google", '/auth/google_oauth2' %>
+    <!-- <p id="googlein"><%= link_to "Log In with Google", '/auth/google_oauth2' %></p> -->
+    <p id="googlein"><a href="/auth/google_oauth2"><img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png"></a></p>
 <%end%>
 
 </div>

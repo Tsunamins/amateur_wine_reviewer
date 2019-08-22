@@ -201,6 +201,13 @@ font-family: 'Poiret One', cursive; */
         
       }
 
+      #googlein p {
+        /* maybe also could have tried src: url() */
+        width: 100px;
+        height: 50px;
+        /* border: 0; */
+      }
+
 
 
   
