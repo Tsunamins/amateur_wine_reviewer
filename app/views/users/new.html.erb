@@ -7,6 +7,9 @@
         <%= f.text_field :favorite_wine, placeholder: "Enter your favorite type of wine, grape, region, maker etc." %> <br>
         <%= f.password_field :password, placeholder: "Choose a password"%> <br>
         <p class="diffsubmit"><%= f.submit %></p>
+
+        <p> - or - </p>
+    <%= link_to "Sign UP with Google", '/auth/google_oauth2' %>
     <% end %>
 </div>
 <p> check on all validations </p>
