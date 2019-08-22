@@ -7,33 +7,73 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Istok+Web|Livvic:300,400|Orbitron|Poiret+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/app/assets/stylesheets/application.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   </head>
 
   <body>
   
   <div id="navbar">
-
-      <div id="menu" > 
-        <ul>
-          <li>Reviewers</li>
-          <li>Wines</li>
-          <li>Reviews</li>
-        </ul>
-      </div>
-
-      <div id="title">
+      
+  <div id="title">
         <h1>The Amateur Wine Reviewer</h1>
       </div>
 
-      <div id="usermenu">
-        <% if logged_in? %>
-          <ul>
-            <li>
-              <ul><%= link_to  @user.username, user_path(@user) %></ul>
-              <ul><%= link_to "Log Out", logout_path %></ul>
+
+    <div id="navbaritems">
+    <ul id="wrapper">
+      <li>
+        <ul>            
+            <li class="dropdown">
+              <a href="#" class="dropbtn"><i style='font-size:24px' class='fas'>&#xf5ce;</i>Menu</a>
+              <div class="dropdown-content">
+                <a href="#">Reviewers</a>
+                <a href="#">Wines</a>
+                <a href="#">Reviews</a>
+              </div>
             </li>
-        <%  end %>
-      </div>
+          </ul>      
+      </li>
+              
+      
+
+      
+
+      
+
+      <% if logged_in? %>
+        <li>
+          <ul id="usermenu"> 
+              <li class="dropdown">
+                <a href="#" class="dropbtn"><%= @user.username %>'s Wines <i style='font-size:24px' class='fas'>&#xf4fb;</i> </a>
+                <div class="dropdown-content">
+                  <p><%= link_to  @user.username, user_path(@user) %></p>
+                  <p><%= link_to "Log Out", logout_path %></p>
+                </div>
+              </li>
+          </ul>
+        </li>  
+        
+        
+      <% else %> 
+          <li>
+            <ul id="usermenu"> 
+              <li class="dropdown">
+                <p></p>
+                <div class="dropdown-content">
+                  <p></p>
+                  <p></p>
+                </div>
+              </li>
+            </ul>
+          </li>
+      <%  end %>
+
+        </ul> <!-- end ul wrapper -->
+      
+      </div> <!-- end navbaritems -->
+
   </div>
   <br>
   

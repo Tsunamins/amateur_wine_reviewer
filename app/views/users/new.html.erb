@@ -1,11 +1,12 @@
-<h1>Sign Up</h1>
-<div>
+
+<div class="userview">
+    <h1>Sign Up</h1>
     <%= form_for @user do |f| %>
         <%= f.text_field :username, placeholder: "Enter a Username" %> <br>
         <%= f.text_field :email, placeholder: "Email Address" %> <br>
         <%= f.text_field :favorite_wine, placeholder: "Enter your favorite type of wine, grape, region, maker etc." %> <br>
         <%= f.password_field :password, placeholder: "Choose a password"%> <br>
-        <%= f.submit %>
+        <p class="diffsubmit"><%= f.submit %></p>
     <% end %>
 </div>
 <p> check on all validations </p>

@@ -1,11 +1,12 @@
-<h1>Edit user info page</h1>
 
-<div>
+
+<div class="userview">
+<h1>Edit Info</h1>
     <%= form_for @user do |f| %>
         
         <%= f.text_field :email, placeholder: @user.username %> <br>
         <%= f.text_field :favorite_wine, placeholder: @user.favorite_wine %> <br>
         
-        <%= f.submit %>
+        <%= f.submit value="Update Info" %>
     <% end %>
 </div>
