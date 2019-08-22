@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   
   root 'home#index'
   resources :users
+
+  #google login route
+  get '/auth/:provider/callback' => 'sessions#omniauth'
 end
