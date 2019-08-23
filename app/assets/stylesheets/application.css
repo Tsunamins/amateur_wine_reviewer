@@ -165,7 +165,7 @@ font-family: 'Poiret One', cursive; */
     /* current, bright champagne background gradient */
     /* current champagne bubble gradient background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25)) */
     /* other champgane effect bottom 186, 178, 95 */
-    input[type=text], [type=password] {
+    input[type=text], [type=password], [type=number], #wine_style {
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;
