@@ -13,3 +13,5 @@ class CreateRatings < ActiveRecord::Migration[5.2]
       end
     end
   end
+
+  #not currently using this table or model, incorporated into reviews

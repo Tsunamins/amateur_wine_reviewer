@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 4) do
+ActiveRecord::Schema.define(version: 5) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer "color"
@@ -35,6 +35,12 @@ ActiveRecord::Schema.define(version: 4) do
     t.string "other"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "color"
+    t.integer "taste"
+    t.integer "balance_rating"
+    t.integer "wine_experience"
+    t.integer "someone_else_like"
+    t.integer "total"
   end
 
   create_table "users", force: :cascade do |t|
