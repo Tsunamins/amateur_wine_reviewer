@@ -1,9 +1,8 @@
 class User < ActiveRecord::Base
+    has_many :reviews
+    has_many :wines, through :reviews
+
     has_secure_password
-
-    has_many :reviews, :ratings
-    has_many :wines, through :ratings
-
 
     validates :username, presence: true
     validates :username, uniqueness: true
@@ -18,4 +17,5 @@ class User < ActiveRecord::Base
           user.password = SecureRandom.hex
         end
       end
+
 end 
