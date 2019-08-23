@@ -10,7 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 1) do
+ActiveRecord::Schema.define(version: 4) do
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer "color"
+    t.integer "taste"
+    t.integer "balance"
+    t.integer "overall_like"
+    t.integer "someone_else_like"
+    t.integer "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "fruit"
+    t.string "tannin"
+    t.string "body"
+    t.string "balance"
+    t.string "acidity"
+    t.string "flavors"
+    t.string "other"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -20,6 +45,21 @@ ActiveRecord::Schema.define(version: 1) do
     t.date "birthdate"
     t.string "image"
     t.string "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wines", force: :cascade do |t|
+    t.string "wine_name"
+    t.string "vineyard"
+    t.string "winemaker"
+    t.string "story"
+    t.string "grape"
+    t.string "region"
+    t.string "style"
+    t.integer "vintage"
+    t.integer "alcohol"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
