@@ -9,6 +9,18 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#logout'
   
   root 'home#index'
+
+  resources :wines do 
+    resources :reviews
+  end 
+
+  resources :reviews 
+
+  resources :users do 
+    resources :reviews 
+  end 
+
+
   resources :users
 
   #google login route
