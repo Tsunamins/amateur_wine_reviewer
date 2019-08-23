@@ -1,4 +1,4 @@
-
+<div class="userview">
 <h1>Add a Wine</h1>
 <%= form_for @wine do |f| %>
 
@@ -18,8 +18,9 @@
         <br>
     <%= f.text_field :winemaker, placeholder: "Enter the Wine Maker"%> 
         <br> 
-    <%= f.text_field :story, placeholder: "'Stories sell wine!-' A quote by Larry Tse, enter some notes, history or special topics about the wine, wine maker, region, vineyard or grape"%> 
+    <%= f.text_area :story, placeholder: "'Stories sell wine!-' A quote by Larry Tse, enter some notes, history or special topics about the wine, wine maker, region, vineyard or grape"%> 
         <br>
   <%= f.submit%>
+  </div>
 
 <% end %>
