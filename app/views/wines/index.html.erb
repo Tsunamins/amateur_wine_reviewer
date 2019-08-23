@@ -1,0 +1,13 @@
+<h1> list all wines </h1>
+
+<div>
+    <% @wines.each do |details| %>
+    <div>
+        <p><%= details.wine_name %></p>            
+        <p><%= details.vintage %></p>            
+        <p><%= details.style %></p>
+            
+    </div>
+    <% end %>
+    
+</div>

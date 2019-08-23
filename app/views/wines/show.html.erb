@@ -1,0 +1,19 @@
+<h1> show individual wine page</h1>
+<div class="userview">
+    <div >
+        <p>Wine: <%= @wine.wine_name %></p>
+        <p>Vintage: <%= @wine.vintage %></p>
+        <p>Style: <%= @wine.style %></p>
+        <p>Grape: <%= @wine.grape %></p>
+        <p>Alcohol: <%= @wine.alcohol %>%</p>
+        <p>Region: <%= @wine.region %></p>
+        <p>Vineyard: <%= @wine.vineyard %></p>
+        <p>Winemaker: <%= @wine.winemaker %></p>
+        <p>Story: <%= @wine.story %></p>       
+    </div>   
+
+    <div id="useredit" class="alllinks">
+        <p><%= link_to "Edit Wine", edit_wine_path(@wine) %> </p>
+        <% end %>
+    </div>
+</div>
