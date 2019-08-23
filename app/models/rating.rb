@@ -1,4 +1,6 @@
 class Rating < ActiveRecord::Base
-    has_many :users
-    
+   
+    belongs_to :wine 
+    belongs_to :user
+
 end
