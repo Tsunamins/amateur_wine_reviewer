@@ -1,4 +1,4 @@
-class CreateReviews < ActiveRecord::Migration[5.2]
+class CreateReviewsTwo < ActiveRecord::Migration[5.2]
     def change
       create_table :reviews do |t|
         t.string :title
@@ -10,6 +10,16 @@ class CreateReviews < ActiveRecord::Migration[5.2]
         t.string :acidity 
         t.string :flavors
         t.string :other
+		
+		t.integer :color
+        t.integer :taste
+        t.integer :balance_rating
+        t.integer :wine_experience
+        t.integer :someone_else_like
+        t.integer :total
+
+        t.belongs_to :user, foreign_key: true
+        t.belongs_to :wine, foreign_key: true
         
         
   

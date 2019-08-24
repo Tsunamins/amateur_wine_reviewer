@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 8) do
+ActiveRecord::Schema.define(version: 11) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer "color"
@@ -33,8 +33,6 @@ ActiveRecord::Schema.define(version: 8) do
     t.string "acidity"
     t.string "flavors"
     t.string "other"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "color"
     t.integer "taste"
     t.integer "balance_rating"
@@ -43,10 +41,10 @@ ActiveRecord::Schema.define(version: 8) do
     t.integer "total"
     t.integer "user_id"
     t.integer "wine_id"
-    t.integer "users_id"
-    t.integer "wines_id"
-    t.index ["users_id"], name: "index_reviews_on_users_id"
-    t.index ["wines_id"], name: "index_reviews_on_wines_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+    t.index ["wine_id"], name: "index_reviews_on_wine_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,6 +72,8 @@ ActiveRecord::Schema.define(version: 8) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_wines_on_user_id"
   end
 
 end
