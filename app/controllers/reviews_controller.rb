@@ -10,13 +10,22 @@ class ReviewsController < ApplicationController
     end 
 
     def new 
+        
+        @wine = Wine.find_by_id(params[:wine_id])
+        
         @user = current_user
         @review = Review.new
+        
     end 
 
     def create 
+
+       
         @user = current_user
-        @review = current_user.reviews.build(review_params)
+        
+        
+        @review = @wine.reviews.build(review_params)
+        
 
         if @review.save 
             
@@ -43,8 +52,9 @@ class ReviewsController < ApplicationController
 
     def review_params
         params.require(:review).permit([:title, :description, :user_id, :wine_id, :fruit, :tannin, :body, :balance, :acidity, :flavors, :other, :color, :taste, :balance_rating, :wine_experience, :someone_else_like, :total])
-      end
+    end
 
+   
 
 
 
