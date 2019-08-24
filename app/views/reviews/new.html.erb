@@ -1,0 +1,51 @@
+<div class="userview">
+<h1>Review <%= @wine.wine_name %> </h1>
+<%= form_for @review do |f| %>
+    <div class="review desc">
+        <%= f.text_field :title, placeholder: "Name this review..."%> 
+            <br>   
+        <%= f.text_field :description, placeholder: "Describe the wine summarizing overall reflections and tasting notes..." %>
+            <br>
+        <%= f.text_field :fruit, placeholder: "Note fruit impressions..."%> 
+            <br>
+        <%= f.text_field :tannin, placeholder: "Note tannin impressions..."%> 
+            <br> 
+        <%= f.label :body %>
+        <%= f.select :body, options_for_select(["light - aka 'skim milk'", "medium - aka '2% milk'", "heavy - aka 'whole milk"]), include_blank: true  %> 
+            <br> 
+        <%= f.text_field :balance, placeholder: "Notes on overall balance and finish..."%> 
+            <br>
+        <%= f.text_field :acidity, placeholder: "Note acidity impressions..."%> 
+            <br>
+        <%= f.text_field :flavors, placeholder: "Note tastes, flavors, scents, etc..."%> 
+            <br>
+        <%= f.text_field :other, placeholder: "Note anything else you would like..."%> 
+            <br>
+    </div>
+        
+
+    <div class="review rating">
+        
+        <%= f.number_field :color, placeholder: "Give a color rating" %>
+        <br>
+        
+        <%= f.number_field :taste, placeholder: "Rate the tastes" %>
+        <br>
+        
+        <%= f.number_field :balance_rating, placeholder: "Rate the balance" %>
+        <br>
+        
+        <%= f.number_field :wine_experience, placeholder: "Rate the overall wine experience" %>
+        <br>
+        
+        <%= f.number_field :someone_else_like, placeholder: "Even if you don't like it, could someone else?" %>
+        <br>
+        
+        <%= f.number_field :total, placeholder: "This will be a total" %>
+        <br>
+    </div>
+
+  <%= f.submit%>
+  </div>
+
+<% end %>
