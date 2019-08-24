@@ -11,10 +11,19 @@ class ReviewsController < ApplicationController
 
     def new 
         @user = current_user
+        @review = Review.new
     end 
 
     def create 
         @user = current_user
+        @review = current_user.reviews.build(review_params)
+
+        if @review.save 
+            
+            redirect_to review_path(@review)
+        else
+            render :new 
+        end
     end 
 
     def edit
@@ -32,7 +41,9 @@ class ReviewsController < ApplicationController
 
     private 
 
-    def
+    def review_params
+        params.require(:review).permit([:title, :description, :user_id, :wine_id, :fruit, :tannin, :body, :balance, :acidity, :flavors, :other, :color, :taste, :balance_rating, :wine_experience, :someone_else_like, :total])
+      end
 
 
 

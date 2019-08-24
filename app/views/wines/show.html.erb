@@ -9,12 +9,13 @@
         <p>Region: <%= @wine.region %></p>
         <p>Vineyard: <%= @wine.vineyard %></p>
         <p>Winemaker: <%= @wine.winemaker %></p>
-        <p>Story: <%= @wine.story %></p>       
+        <p>Story: <%= @wine.story %></p>
+               
     </div>   
 
     <div id="useredit" class="alllinks">
         <p><%= link_to "Edit Wine", edit_wine_path(@wine) %></p>
-        
+        <p><%= link_to "Review this Wine", new_wine_review_path(@wine) %></p>
     </div>
 
 </div>
