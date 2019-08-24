@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 5) do
+ActiveRecord::Schema.define(version: 7) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer "color"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 5) do
     t.integer "wine_experience"
     t.integer "someone_else_like"
     t.integer "total"
+    t.integer "user_id"
+    t.integer "wine_id"
   end
 
   create_table "users", force: :cascade do |t|
