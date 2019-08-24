@@ -1,4 +1,11 @@
-<h1> successful login main page </h1>
-<h1> will prob change or delete this page</h1>
+<h1> The Wine Reviewers </h1>
+<div>
+    <% @users.each do |details| %>
+    <div>
+        <p><%= details.username %></p>
+        <p>some other details here, favorite wine, number of reviews, most recent review</p>
+        <%= link_to "View User Activities", user_path(details)%> 
+    </div>
+    <%end%>
 
-<p>some miscellaneous text</p>
+</div>

@@ -26,7 +26,8 @@ class UsersController < ApplicationController
     end
 
     def index 
-        @user = User.find_by(id: params[:id])
+        @user = current_user
+        @users = User.all
     end 
 
     def edit

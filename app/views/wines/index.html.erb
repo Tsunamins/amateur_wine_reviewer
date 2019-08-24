@@ -6,6 +6,7 @@
         <p><%= details.wine_name %></p>            
         <p><%= details.vintage %></p>            
         <p><%= details.style %></p>
+        <%= link_to "View this Wine", wine_path(details)%> 
             
     </div>
     <% end %>
