@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 7) do
+ActiveRecord::Schema.define(version: 8) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer "color"
@@ -43,6 +43,10 @@ ActiveRecord::Schema.define(version: 7) do
     t.integer "total"
     t.integer "user_id"
     t.integer "wine_id"
+    t.integer "users_id"
+    t.integer "wines_id"
+    t.index ["users_id"], name: "index_reviews_on_users_id"
+    t.index ["wines_id"], name: "index_reviews_on_wines_id"
   end
 
   create_table "users", force: :cascade do |t|
