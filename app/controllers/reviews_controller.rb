@@ -10,11 +10,15 @@ class ReviewsController < ApplicationController
     end 
 
     def new 
-        
         @wine = Wine.find_by_id(params[:wine_id])
-        
         @user = current_user
+       if @wine = Wine.find_by_id(params[:wine_id])
+        @review = @wine.reviews.build 
+       else 
         @review = Review.new
+       end 
+        
+        
         
     end 
 
@@ -24,7 +28,7 @@ class ReviewsController < ApplicationController
         @user = current_user
         
         
-        @review = @wine.reviews.build(review_params)
+        @review = current_user.reviews.build(review_params)
         
 
         if @review.save 
