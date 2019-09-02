@@ -1,1 +1,21 @@
 <h1>Individual Wine Review Page</h1>
+<div>
+        <p><%= @review.title %></p>
+        <p><%= @review.description %></p>
+        <p>Fruit <%= @review.fruit %></p>
+        <p>Tannin: <%= @review.tannin %></p>
+        <p>Body: <%= @review.body %>%</p>
+        <p>Balance: <%= @review.balance %></p>
+        <p>Acidity: <%= @review.acidity %></p>
+        <p>Flavors: <%= @review.flavors %></p>
+        <p>Other Notes: <%= @review.other %></p>
+
+        <p>Ratings</p>
+        <p>Color: <%= @review.color %></p>
+        <p>Taste: <%= @review.taste %></p>
+        <p>Balance: <%= @review.balance_rating %></p>
+        <p>The Wine Experience: <%= @review.wine_experience %></p>
+        <p>Some Else Might like it Rating: <%= @review.someone_else_like %></p>
+        <p>Totaling and other rating displays later here</p>
+               
+    </div>
