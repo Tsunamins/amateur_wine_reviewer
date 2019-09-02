@@ -1,6 +1,20 @@
 <div class="userview">
-<h1>Review <%= @wine.wine_name %></h1>
+
 <%= form_for @review do |f| %>
+
+    <% if params[:wine_id] %>
+        <%= f.hidden_field :wine_id %>
+    <% else %>
+        <div>
+            <%= f.label :wine_id, "Which wine do you want to review?" %>
+            <select name="wine[wine_id]">
+            <% Wine.all.each do |wine| %>
+                <option value="<%= wine.id %>"><%= wine.wine_name %></option>
+            <% end %>
+            </select>
+        </div>
+    <% end %>
+
     <div class="review desc">
         <h4>Describe the Wine</h4>
         <%= f.text_field :title, placeholder: "Name this review..."%> 
@@ -11,8 +25,8 @@
             <br>
         <%= f.text_field :tannin, placeholder: "Note tannin impressions..."%> 
             <br> 
-        <%= f.label :body %>
-        <%= f.select :body, options_for_select(["light - aka 'skim milk'", "medium - aka '2% milk'", "heavy - aka 'whole milk"]), include_blank: true  %> 
+        
+        <%= f.select :body, options_for_select(["light - aka 'skim milk'", "medium - aka '2% milk'", "heavy - aka 'whole milk"]), prompt: 'Select Body'  %> 
             <br> 
         <%= f.text_field :balance, placeholder: "Notes on overall balance and finish..."%> 
             <br>
