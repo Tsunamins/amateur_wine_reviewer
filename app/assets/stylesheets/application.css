@@ -220,3 +220,134 @@ font-family: 'Poiret One', cursive; */
       }
 
 
+      /* Styling mini wine bottles */
+
+
+      .wholebottle {
+        margin: 0;
+        padding: 0;
+        max-width: 150px;
+        
+        
+      }
+      
+      .neck {
+        background-image: linear-gradient(to left, rgb(120, 120, 120), rgb(0, 0, 0),  rgb(120, 120, 120), rgb(0, 0, 0));
+        margin: 0;
+        padding: 0;
+        height: 30px;
+        margin-left: 52px;
+        margin-right: 52px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
+        
+      }
+      
+      
+      
+      
+      .lip {
+        margin: 0;
+        padding: 0;
+        
+        height: 4px;
+        background-color: #2f4353;
+      background-image: linear-gradient(315deg, #2f4353 0%, #ccab52 74%);
+        margin-left: 52px;
+        margin-right: 52px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+       
+      
+      }
+      
+      .foilcutline {
+        background-color: #2f4353;
+      background-image: linear-gradient(315deg, #2f4353 0%, #ccab52 74%);
+        height: 8px;
+        margin: 0;
+        padding: 0;margin-left: 50px;
+        margin-right: 50px;
+        border-radius: 2px;
+        
+        
+      }
+      
+      p.foil {
+        background-color: #2f4353;
+      background-image: linear-gradient(315deg, #2f4353 0%, #ccab52 74%);
+        height: 40px;
+        margin: 0;
+        padding: 0;
+        margin-left: 52px;
+        margin-right: 52px;
+        
+      }
+      
+      .main {
+        background-image: linear-gradient(to left, rgb(120, 120, 120), rgb(0, 0, 0),  rgb(120, 120, 120), rgb(0, 0, 0));
+        margin: 0;
+        padding: 0;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 150px 30px;;
+        border-bottom-right-radius: 150px 30px;
+        min-height: 200px;
+        text-align: center;
+        margin-top: -16px;
+        margin-left: 20px;
+        margin-right: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      } /* linear gradient current effect dark, light, dark */
+      
+      .label {
+        padding-top: 20px;
+        
+      }
+      
+      
+      
+      
+      #winename {
+        font-family: 'Satisfy', cursive;
+        color: rgb(191, 134, 11);
+        font-size: 20px;
+      }
+
+      #vintage, #winestyle {
+        color: rgb(191, 134, 11); 
+      }
+
+      #winesul {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-image: url("crates2.jpg");
+        background-repeat: no-repeat;
+        background-color: black;
+        
+      }
+
+      #winesli a {
+        background-image: linear-gradient(to left, rgb(120, 120, 120), rgb(0, 0, 0),  rgb(120, 120, 120), rgb(0, 0, 0));
+        color: rgb(191, 134, 11);
+        border-radius: 25px;
+      }
+
+      #winesli a:hover {
+
+        background-image: linear-gradient(to left, rgba(120, 120, 120, 0.603), rgba(0, 0, 0, 0.603),  rgba(120, 120, 120, 0.603), rgba(0, 0, 0, 0.603));
+
+
+
+        
+
+      }
+      
+      
+      
+      
+      
+      
+      
+
+

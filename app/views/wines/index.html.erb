@@ -1,14 +1,37 @@
-<h1> list all wines </h1>
+
 
 <div>
+    <ul id="winesul">
     <% @wines.each do |details| %>
-    <div>
-        <p><%= details.wine_name %></p>            
-        <p><%= details.vintage %></p>            
-        <p><%= details.style %></p>
-        <%= link_to "View this Wine", wine_path(details)%> 
-            
-    </div>
-    <% end %>
     
-</div>
+    <li id="winesli">
+    <div class="wholebottle">
+  
+        <div class="top">
+            <p class="lip"></p>
+            <p class="foilcutline"></p>
+            <p class="foil"></p>
+            <p class="neck"></p>
+        </div>
+
+        <div class="bottle main">
+            <p></p>
+            <p class="label">
+                <div>
+                    <p id="winename"><%= details.wine_name %></p>
+       
+                    <p id="vintage"><%= details.vintage %></p>
+       
+                    <p id="winestyle"><%= details.style %></p>
+                </div>
+            </p>    
+        </div>
+  
+        </div>
+        <%= link_to "View Wine", wine_path(details)%>
+        </li>
+        
+        <% end %>
+        </ul>
+    
+    </div>
