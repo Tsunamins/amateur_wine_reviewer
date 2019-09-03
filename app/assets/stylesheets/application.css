@@ -239,6 +239,7 @@ font-family: 'Poiret One', cursive; */
         margin-left: 52px;
         margin-right: 52px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        min-width: 40px;
         
         
       }
@@ -257,6 +258,7 @@ font-family: 'Poiret One', cursive; */
         margin-right: 52px;
         border-top-left-radius: 2px;
         border-top-right-radius: 2px;
+        
        
       
       }
@@ -331,6 +333,7 @@ font-family: 'Poiret One', cursive; */
         background-image: linear-gradient(to left, rgb(120, 120, 120), rgb(0, 0, 0),  rgb(120, 120, 120), rgb(0, 0, 0));
         color: rgb(191, 134, 11);
         border-radius: 25px;
+        margin-left: 20px;
       }
 
       #winesli a:hover {
