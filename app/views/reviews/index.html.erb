@@ -1,14 +1,16 @@
-<h1>All wine reviews page</h1>
 
 
-<div>
+<ul id="reviewsul">
+<div><h1>The Wine Reviews</h1>
     <% @reviews.each do |details| %>
-    <div>
-        <p><%= details.title %></p>            
+    <li id="reviewsli" >
+        <p ><%= details.title %></p>
+        <p><%= link_to "View this Review", review_path(details)%> </p>            
         
-        <%= link_to "View this Review", review_path(details)%> 
+        
             
-    </div>
+    </li>
     <% end %>
+    </ul>
     
 </div>
