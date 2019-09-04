@@ -1,11 +1,21 @@
-<h1> The Wine Reviewers </h1>
+
 <div>
+
+    <ul id="usersul">
+    <h1 id="reviewerstitle"> The Amateur Wine Reviewers </h1>
     <% @users.each do |details| %>
-    <div>
-        <p><%= details.username %></p>
-        <p>some other details here, favorite wine, number of reviews, most recent review</p>
-        <%= link_to "View User Activities", user_path(details)%> 
-    </div>
+    <li>
+        <div>
+            <div class="glass">
+                <p class="glasslabel"><%= details.username %></p>
+                <p class="glassfav"><%= details.favorite_wine %></p>
+                <p><%= link_to "View User Activities", user_path(details)%></p>
+            </div>
+        </div>
+    
+    <%= link_to "View User Activities", user_path(details)%> 
+    </li>
     <%end%>
+    </ul>
 
 </div>
