@@ -1,10 +1,11 @@
+<%= render partial: 'layouts/errors', locals: {object: @wine}  %>
 <%= form_for @wine do |f| %>
 
     <%= f.text_field :wine_name, placeholder: "Enter the wine name"%> 
         <br>   
     <%= f.number_field :vintage, placeholder: "Enter vintage, (that's Year for the Novice)" %>
         <br>
-    <%= f.select :style, options_for_select(["rose", "bordeaux", "burgundy", "meritage", "sparkling", "red", "white", "other"]), include_blank: true  %> 
+    <%= f.select :style, options_for_select(["rose", "bordeaux", "burgundy", "meritage", "sparkling", "red", "white", "other"]), prompt: 'Select Wine Type or Style'  %> 
         <br> 
     <%= f.text_field :grape, placeholder: "Enter the grape or grapes, add percentages if possible or known"%> 
         <br> 

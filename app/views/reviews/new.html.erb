@@ -1,3 +1,4 @@
+<%= render partial: 'layouts/errors', locals: {object: @review}  %>
 <div class="userview">
 
 <%= form_for @review do |f| %>
@@ -62,6 +63,7 @@
     </div>
 
   <%= f.submit%>
-  </div>
+  
 
 <% end %>
+</div>
