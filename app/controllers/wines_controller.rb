@@ -35,7 +35,7 @@ class WinesController < ApplicationController
 
     def update 
         @user = current_user
-        @wine = Wine.find(params[:id])
+        
 
         @wine.update(wine_params)
 
