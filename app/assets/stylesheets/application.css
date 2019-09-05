@@ -389,7 +389,7 @@ font-family: 'Poiret One', cursive; */
       #reviewsul li {
         margin: 0px;
         background-color: grey;
-        background-image: repeating-linear-gradient(white 0px, white 19px, steelblue 21px);
+        background-image: repeating-linear-gradient(	rgb(248, 232, 204) 0px, 	rgb(248, 232, 204) 19px, #382701 21px);
         width: 300px;
         height: 300px;
         background-size: 300px 300px;
@@ -399,7 +399,7 @@ font-family: 'Poiret One', cursive; */
       }
 
       #showwinereview {
-        background-image: repeating-linear-gradient(white 0px, white 19px, steelblue 21px);
+        background-image: repeating-linear-gradient(	rgb(248, 232, 204) 0px, 	rgb(248, 232, 204) 19px, #382701 21px);
         border-radius:  25px;
         border: 2px solid black;
         text-align: center;
