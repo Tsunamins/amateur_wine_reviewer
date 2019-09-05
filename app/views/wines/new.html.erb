@@ -1,26 +1,4 @@
 <div class="userview">
 <h1>Add a Wine</h1>
-<%= form_for @wine do |f| %>
-
-    <%= f.text_field :wine_name, placeholder: "Enter the wine name"%> 
-        <br>   
-    <%= f.number_field :vintage, placeholder: "Enter vintage, (that's Year for the Novice)" %>
-        <br>
-    <%= f.select :style, options_for_select(["rose", "bordeaux", "burgundy", "meritage", "sparkling", "red", "white", "other"]), include_blank: true  %> 
-        <br> 
-    <%= f.text_field :grape, placeholder: "Enter the grape or grapes, add percentages if possible or known"%> 
-        <br> 
-    <%= f.number_field :alcohol, placeholder: "Enter the alcohol percentage" %>
-        <br>
-      <%= f.text_field :region, placeholder: "Enter the Region"%> 
-        <br> 
-    <%= f.text_field :vineyard, placeholder: "Enter the Vineyard"%> 
-        <br>
-    <%= f.text_field :winemaker, placeholder: "Enter the Wine Maker"%> 
-        <br> 
-    <%= f.text_area :story, placeholder: "'Stories sell wine!-' A quote by Larry Tse, enter some notes, history or special topics about the wine, wine maker, region, vineyard or grape"%> 
-        <br>
-  <%= f.submit%>
-  </div>
-
-<% end %>
+<%= render partial: 'form'%>
+</div>
