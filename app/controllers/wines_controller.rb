@@ -48,6 +48,14 @@ class WinesController < ApplicationController
 
     end 
 
+    def destroy 
+        @user = current_user
+        @wine = Wine.find(params[:id])
+        @wine.destroy
+        redirect_to user_path(@user)
+
+    end 
+
     private 
 
     def wine_params
