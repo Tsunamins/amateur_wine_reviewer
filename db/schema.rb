@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 11) do
+ActiveRecord::Schema.define(version: 12) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer "color"
@@ -33,12 +33,12 @@ ActiveRecord::Schema.define(version: 11) do
     t.string "acidity"
     t.string "flavors"
     t.string "other"
-    t.integer "color"
-    t.integer "taste"
-    t.integer "balance_rating"
-    t.integer "wine_experience"
-    t.integer "someone_else_like"
-    t.integer "total"
+    t.float "color"
+    t.float "taste"
+    t.float "balance_rating"
+    t.float "wine_experience"
+    t.float "someone_else_like"
+    t.float "total"
     t.integer "user_id"
     t.integer "wine_id"
     t.datetime "created_at", null: false
