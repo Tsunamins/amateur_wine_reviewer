@@ -9,9 +9,12 @@ class Review < ActiveRecord::Base
     validates :fruit, length: { maximum: 100 }
     validates :tannin, length: { maximum: 100 }
 
-    #redo validations here
-    #also adapt this: validates :stars, numericality: {only_integer: true, greater_than_or_equal_to: 0, less_than: 6}
+    validates :color, numericality: {only_integer: true, greater_than_or_equal_to: 0, less_than: 6}
+    validates :taste, numericality: {only_integer: true, greater_than_or_equal_to: 0, less_than: 6}
+    validates :balance_rating, numericality: {only_integer: true, greater_than_or_equal_to: 0, less_than: 6}
+    validates :wine_experience, numericality: {only_integer: true, greater_than_or_equal_to: 0, less_than: 6}
+    validates :someone_else_like, numericality: {only_integer: true, greater_than_or_equal_to: 0, less_than: 6}
 
-
+    
     
 end
