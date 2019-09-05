@@ -1,4 +1,4 @@
-<h1> show individual wine page</h1>
+
 <div class="userview">
     <div>
         <p>Wine: <%= @wine.wine_name %></p>
@@ -16,6 +16,8 @@
     <div id="useredit" class="alllinks">
         <p><%= link_to "Edit Wine", edit_wine_path(@wine) %></p>
         <p><%= link_to "Review this Wine", new_wine_review_path(@wine) %></p>
+        <p><%= link_to 'Destroy', @wine, method: :delete %></p>
+
     </div>
 
 </div>
