@@ -6,27 +6,28 @@ class ReviewsController < ApplicationController
 
     def show 
         @user = current_user
-        @review = Review.find(params[:id])
+        @review = Review.find_by_id(params[:id])
+        
     end 
 
-    def new 
+    def new         
+        @user = current_user
+        if params[:wine_id] && @wine = Wine.find_by_id(params[:wine_id])
+            @review = @wine.reviews.build
+          else
+            @review= Review.new
+            @review.build_wine
+          end
+        
+       
+        
+        
+        
+    end 
+
+    def create       
+        @user = current_user
         @wine = Wine.find_by_id(params[:wine_id])
-        @user = current_user
-       if @wine = Wine.find_by_id(params[:wine_id])
-        @review = @wine.reviews.build 
-       else 
-        @review = Review.new
-       end 
-        
-        
-        
-    end 
-
-    def create 
-
-      
-        @user = current_user
-        
         
         @review = current_user.reviews.build(review_params)
         
@@ -42,14 +43,19 @@ class ReviewsController < ApplicationController
     def edit
         @user = current_user
         @review = Review.find(params[:id])
-        @wine = Wine.find_by_id(params[:wine_id])
+       
+       
 
     end 
 
     def update 
-        @wine = Wine.find_by_id(params[:wine_id])
-        @user = current_user
         @review = Review.find(params[:id])
+
+        @wine = Wine.find_by_id(params[:id])
+        @user = current_user
+        
+        @wine_review = @review.wine_id
+
         
         
 
@@ -63,7 +69,11 @@ class ReviewsController < ApplicationController
 
     def destroy 
         @user = current_user
-    end 
+        @review = Review.find(params[:id])
+        @review.destroy
+        redirect_to user_path(@user)
+
+    end
 
     private 
 
