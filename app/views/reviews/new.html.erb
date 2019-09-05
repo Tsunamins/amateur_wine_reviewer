@@ -3,21 +3,12 @@
 
 <%= form_for @review do |f| %>
 
-    <% if params[:wine_id] %>
-        <%= f.hidden_field :wine_id %>
-    <% else %>
-        <div>
-            <%= f.label :wine_id, "Which wine do you want to review?" %>
-            <select name="wine[wine_id]">
-            <% Wine.all.each do |wine| %>
-                <option value="<%= wine.id %>"><%= wine.wine_name %></option>
-            <% end %>
-            </select>
-        </div>
-    <% end %>
+    
+<h4>Describe <%= @wine.wine_name %></h4>
+    
 
     <div class="review desc">
-        <h4>Describe the Wine</h4>
+        
         <%= f.text_field :title, placeholder: "Name this review..."%> 
             <br>   
         <%= f.text_field :description, placeholder: "Describe the wine summarizing overall reflections and tasting notes..." %>
