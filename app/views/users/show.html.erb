@@ -6,12 +6,7 @@
         <p>Favorite Wine: <%= @user.favorite_wine %></p> 
 
         <p><%= @user.username %>'s Wines</p>
-        <ul>
-            <% @user.wine_reviews.each do |review|%>
-                <li> <%= link_to review.wine_name, wine_review_path(review)%> </li>
-            <% end %>
-        </ul>
-    </div>   
+         
 
     <div id="useredit" class="alllinks">
         <% if @user == current_user %>

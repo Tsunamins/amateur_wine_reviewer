@@ -2,11 +2,12 @@
 <div class="userview">
 
 <%= form_for @review do |f| %>
-
-    
-<h4>Describe <%= @wine.wine_name %></h4>
-    
-
+<% if params[:wine_id] %>
+        <%= f.hidden_field :wine_id %>
+       <%= @wine.wine_name %>
+       <% end %> 
+        
+ 
     <div class="review desc">
         
         <%= f.text_field :title, placeholder: "Name this review..."%> 
