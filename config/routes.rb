@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   get 'logout' => 'sessions#logout'
   
+  
   root 'home#index'
 
   resources :wines do 
