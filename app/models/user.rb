@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
     has_many :reviews
-    
-    has_many :wine_reviews, through: :reviews, source: :wine
+
+    has_many :wines, through: :reviews
+
+    accepts_nested_attributes_for :reviews
 
     has_secure_password
 
