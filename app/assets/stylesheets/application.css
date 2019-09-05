@@ -398,6 +398,13 @@ font-family: 'Poiret One', cursive; */
         text-align: center;
       }
 
+      #showwinereview {
+        background-image: repeating-linear-gradient(white 0px, white 19px, steelblue 21px);
+        border-radius:  25px;
+        border: 2px solid black;
+        text-align: center;
+      }
+
       
       
       

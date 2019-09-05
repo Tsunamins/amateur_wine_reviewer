@@ -1,4 +1,5 @@
-<h1>Individual Wine Review Page</h1>
+<div id="showwinereview">
+<h1>Wine Review</h1>
 <div>
         <p><%= @review.title %></p>
         <p><%= @review.description %></p>
@@ -20,3 +21,4 @@
                
     </div>
     <p><%= link_to "Edit Review", edit_review_path(@review) %> </p>
+</div>
