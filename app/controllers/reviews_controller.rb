@@ -41,11 +41,24 @@ class ReviewsController < ApplicationController
 
     def edit
         @user = current_user
+        @review = Review.find(params[:id])
+        @wine = Wine.find_by_id(params[:wine_id])
 
     end 
 
     def update 
+        @wine = Wine.find_by_id(params[:wine_id])
         @user = current_user
+        
+        @review = current_user.reviews.update(review_params)
+        
+
+        if @review.save
+            redirect_to review_path(@review)
+            
+        else
+            render :edit
+        end
     end 
 
     def destroy 
