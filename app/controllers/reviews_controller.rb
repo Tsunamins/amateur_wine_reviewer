@@ -49,11 +49,11 @@ class ReviewsController < ApplicationController
     def update 
         @wine = Wine.find_by_id(params[:wine_id])
         @user = current_user
+        @review = Review.find(params[:id])
         
-        @review = current_user.reviews.update(review_params)
         
 
-        if @review.save
+        if @review.update(review_params)
             redirect_to review_path(@review)
             
         else
