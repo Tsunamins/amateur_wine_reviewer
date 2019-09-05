@@ -3,6 +3,8 @@ class Wine < ActiveRecord::Base
     
     has_many :users, through: :reviews
 
+    accepts_nested_attributes_for :reviews
+
     validates :wine_name, presence: true
     validates :wine_name, uniqueness: true
     validates :vintage, length: { is: 4 }
