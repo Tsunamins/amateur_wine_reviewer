@@ -17,7 +17,10 @@
         <p>Balance: <%= @review.balance_rating %></p>
         <p>The Wine Experience: <%= @review.wine_experience %></p>
         <p>Some Else Might like it Rating: <%= @review.someone_else_like %></p>
-        <p>Totaling and other rating displays later here</p>
+        <% @review.total = @review.color + @review.taste + @review.balance_rating + @review.wine_experience + @review.someone_else_like %>
+        <% @rating = (@review.total / 25) * 100 %>
+        <p>This Amatuer Wine review gives this wine <%= @rating %> points!</p>
+        
                
     </div>
     <p><%= link_to "Edit Review", edit_review_path(@review) %> </p>
