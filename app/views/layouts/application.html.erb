@@ -48,9 +48,9 @@
         <li>
           <ul id="usermenu"> 
               <li class="dropdown">
-                <a href="#" class="dropbtn"><%= @user.username %>'s Wines <i style='font-size:24px' class='fas'>&#xf4fb;</i> </a>
+                <a href="#" class="dropbtn"><%= current_user.username %>'s Wines <i style='font-size:24px' class='fas'>&#xf4fb;</i> </a>
                 <div class="dropdown-content">
-                  <p><%= link_to  @user.username, user_path(@user) %></p>
+                  <p><%= link_to  current_user.username, user_path(current_user) %></p>
                   <p><%= link_to "Log Out", logout_path %></p>
                 </div>
               </li>
