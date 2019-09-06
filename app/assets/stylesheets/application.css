@@ -391,7 +391,7 @@ font-family: 'Poiret One', cursive; */
         background-size: 90%;
         background-position: center center;
         margin: 0px;
-        background-color: rgb(248, 232, 204);
+        
         background-image: repeating-linear-gradient(	rgb(248, 232, 204) 0px, 	rgb(248, 232, 204) 19px, #382701 21px);
         width: 300px;
         height: 300px;
