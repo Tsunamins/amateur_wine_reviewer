@@ -49,7 +49,7 @@ class ReviewsController < ApplicationController
              
 
         else
-            # Type missing, nothing happens
+            
              
         end
     end
