@@ -42,7 +42,7 @@ class ReviewsController < ApplicationController
         if type == "like"
             
             current_user.likes << @review
-            
+                redirect_to like_review_path(current_user)
 
         elsif type == "unlike"
             current_user.likes.delete(@review)
