@@ -6,8 +6,13 @@ class WinesController < ApplicationController
     end
 
     def index 
-        
-        @wines = Wine.all
+        if params[:rose] == 'rose'
+            @wines = Wine.rose
+        else
+            @wines = Wine.all
+        end 
+            
+         
     end 
 
     def new 

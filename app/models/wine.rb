@@ -14,4 +14,6 @@ class Wine < ActiveRecord::Base
     validates :region, length: { maximum: 100 }
     validates :alcohol, length: { maximum: 5 } 
     validates :story, length: { maximum: 1000 } 
+
+    scope :rose, -> { where(style: 'rose') }
 end 

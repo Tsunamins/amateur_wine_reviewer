@@ -1,4 +1,12 @@
 
+<div>
+<h1>The Wines</h1>
+<p>show only rose</p>
+<%= form_tag("/wines", method: "get") do %>
+  <%= select_tag "rose", options_for_select(["rose"]), include_blank: true %>
+ 
+  <%= submit_tag "Find Rose" %>
+<% end %>
 
 <div>
     <ul id="winesul">
