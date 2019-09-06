@@ -4,12 +4,20 @@
         <p>Username: <%= @user.username %></p>
     
         <p>Favorite Wine: <%= @user.favorite_wine %></p> 
-
-        <p><%= @user.username %>'s Wines</p>
-         
+        
+        <p><%= @user.username %>'s Wine Reviews</p>
+        <ul id="reviewsul">
+        <% @user.reviews.each do |details| %>
+            <li>
+            <%= details.title %>
+            <%= link_to "view review", review_path(details) %>
+            </li>
+            <%end%>
+           </ul>
 
     <div id="useredit" class="alllinks">
         <% if @user == current_user %>
+        
 
         <p><%= link_to "Edit Info", edit_user_path(@user) %> </p>
         <p><%= link_to "Add Wine", new_wine_path %> </p>

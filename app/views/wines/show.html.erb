@@ -11,7 +11,17 @@
         <p>Winemaker: <%= @wine.winemaker %></p>
         <p>Story: <%= @wine.story %></p>
                
-    </div>   
+    </div> 
+    <div class="listreviews">
+          <ul>
+            <% @wine_reviews.each do |list| %>
+                <li>
+                    <%= link_to list.title, review_path(list) %>
+                </li>
+            <%end%>
+        </ul> 
+    </div>
+            
 
     <div id="useredit" class="alllinks">
         <p><%= link_to "Edit Wine", edit_wine_path(@wine) %></p>
