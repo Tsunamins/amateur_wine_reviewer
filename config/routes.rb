@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   resources :reviews do 
     put :like, on: :member
+    get :like, on: :member
   end 
 
   #google login route
