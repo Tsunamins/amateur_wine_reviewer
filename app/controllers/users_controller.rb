@@ -22,21 +22,23 @@ class UsersController < ApplicationController
     def show
         
         @user = User.find_by(id: params[:id]) 
-          
+        @reviews = Review.all
+        @review = Review.find_by_id(params[:id])
+
     end
 
     def index 
-        @user = current_user
+        
         @users = User.all
     end 
 
     def edit
-        @user = current_user
+       @user = current_user
         
     end
     
     def update
-        @user = current_user
+     
              
         @user.update(email: params[:user][:email], favorite_wine: params[:user][:favorite_wine])
         redirect_to user_path(@user)
