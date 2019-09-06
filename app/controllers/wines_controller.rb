@@ -1,6 +1,5 @@
 class WinesController < ApplicationController
     def show
-        
         @wine = Wine.find(params[:id])
         @wine_reviews = @wine.reviews
     end
@@ -11,17 +10,13 @@ class WinesController < ApplicationController
         else
             @wines = Wine.all
         end 
-            
-         
     end 
 
     def new 
-       
         @wine = Wine.new
     end 
 
     def create
-       
         @wine = Wine.new(wine_params)
         if @wine.save 
             #redirect_to @wine
@@ -34,32 +29,22 @@ class WinesController < ApplicationController
 
     
     def edit
-        
         @wine = Wine.find(params[:id])
-
     end 
 
     def update 
-      
-        
-
         @wine.update(wine_params)
-
         if @wine.save
             redirect_to @wine
-            
         else
             render :edit
         end
-
     end 
 
     def destroy 
-        
         @wine = Wine.find(params[:id])
         @wine.destroy
         redirect_to user_path(@user)
-
     end 
 
     private 
@@ -68,6 +53,4 @@ class WinesController < ApplicationController
         params.require(:wine).permit([:wine_name, :vintage, :vineyard, :winemaker, :story, :grape, :region, :style, :alcohol])
     end
 
-    
-    
 end 

@@ -19,6 +19,7 @@
         <p>Some Else Might like it Rating: <%= @review.someone_else_like %></p>
         <% @review.total = @review.color + @review.taste + @review.balance_rating + @review.wine_experience + @review.someone_else_like %>
         <% @rating = (@review.total / 25) * 100 %>
+    
         <p>This Amatuer Wine review gives this wine <%= @rating %> points!</p>
         
                
