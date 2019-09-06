@@ -1,7 +1,10 @@
 class Review < ActiveRecord::Base
     belongs_to :user
     belongs_to :wine
-    has_many :likes
+
+    has_many :liked_reviews
+    has_many :liked_by, through: :liked_reviews, source: :user
+        #note returns users that like a review
 
     validates :title, presence: true
     validates :title, length: { maximum: 50 }
@@ -16,12 +19,4 @@ class Review < ActiveRecord::Base
     validates :wine_experience, numericality: {only_float: true, greater_than_or_equal_to: 0, less_than: 6}
     validates :someone_else_like, numericality: {only_float: true, greater_than_or_equal_to: 0, less_than: 6}
 
-    def saved_likes
-        self.likes.reject{ |l| !l.persisted?}
-      end
-    
-      def likers
-        self.likes.map { |like| like.user }.uniq.reject { |user| user.username.nil? }
-      end
-   
 end

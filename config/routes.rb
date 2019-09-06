@@ -8,9 +8,7 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   get 'logout' => 'sessions#logout'
   
-  resources :users do
-    resources :likes 
-  end 
+ 
 
   root 'home#index'
 
@@ -25,7 +23,12 @@ Rails.application.routes.draw do
   end 
 
 
+
   resources :users
+
+  resources :reviews do 
+    put :like, on: :member
+  end 
 
   #google login route
   get '/auth/:provider/callback' => 'sessions#omniauth'
