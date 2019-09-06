@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#logout'
   
   
+
   root 'home#index'
 
   resources :wines do 

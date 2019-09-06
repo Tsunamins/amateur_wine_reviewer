@@ -4,8 +4,9 @@
 <div><h1>The Wine Reviews</h1>
     <% @reviews.each do |details| %>
     <li id="reviewsli" >
-        <p ><%= details.title %></p>
-        <p><%= link_to "View this Review", review_path(details)%> </p>            
+            
+            <p><%= details.title %></p>
+            <p><%= link_to "View this Review", review_path(details)%> </p>           
         
         
             
