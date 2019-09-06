@@ -1,0 +1,6 @@
+<%= @user.username %>
+<ul>
+    <% @user.likes.each do |l| %>
+        <li><%= link_to l.review.title, review_path(l.review) %></li>
+    <%end%>
+</ul>

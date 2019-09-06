@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   get 'logout' => 'sessions#logout'
   
-  
+  resources :users do
+    resources :likes 
+  end 
 
   root 'home#index'
 
