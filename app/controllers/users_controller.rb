@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     
     def update
      
-             
+        @user = current_user   
         @user.update(email: params[:user][:email], favorite_wine: params[:user][:favorite_wine])
         redirect_to user_path(@user)
          
