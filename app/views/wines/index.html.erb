@@ -1,15 +1,16 @@
 
-<div>
-<h1>The Wines</h1>
-<p>show only rose</p>
 <%= form_tag("/wines", method: "get") do %>
-  <%= select_tag "rose", options_for_select(["rose"]), include_blank: true %>
+                <%= select_tag "rose", options_for_select(["rose"]), prompt: 'Filter by style or type of wine' %>
  
-  <%= submit_tag "Find Rose" %>
-<% end %>
+                <%= submit_tag "Filter" %>
+                <% end %>
 
 <div>
     <ul id="winesul">
+        <div id="thewines">
+            <h1>The Wines</h1>
+                
+                
     <% @wines.each do |details| %>
     
     <li id="winesli">

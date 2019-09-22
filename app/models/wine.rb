@@ -17,6 +17,7 @@ class Wine < ActiveRecord::Base
     validate :wine_and_vintage 
 
     scope :rose, -> { where(style: 'rose') }
+   
 
     def wine_and_vintage 
         wine = Wine.find_by(wine_name: wine_name, vintage: vintage)

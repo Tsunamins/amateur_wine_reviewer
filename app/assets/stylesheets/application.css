@@ -320,12 +320,17 @@ font-family: 'Poiret One', cursive; */
         color: rgb(191, 134, 11); 
       }
 
+      #thewines {
+        
+      }
+
       #winesul {
         padding-top: 10px;
         padding-bottom: 10px;
         background-image: url("crates2.jpg");
         background-repeat: no-repeat;
         background-color: black;
+        
         
       }
 
