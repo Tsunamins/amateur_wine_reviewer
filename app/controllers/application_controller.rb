@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
     before_action :user_not_logged_in
-    helper_method :current_user, :logged_in?
-    helper_method 
+    helper_method :current_user, :logged_in?   
 
     private 
 
