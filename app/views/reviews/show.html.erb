@@ -27,12 +27,23 @@
 
     <div>
         <% if current_user %>
-  <%= link_to "like",   like_review_path(@review, type: "like"), method: :put %>
-  <%= link_to "unlike", like_review_path(@review, type: "unlike"), method: :put %>
-<% end %>
-            </div>
+            <%= link_to "like",   like_review_path(@review, type: "like"), method: :put %>
+            <%= link_to "unlike", like_review_path(@review, type: "unlike"), method: :put %>
+        <% end %>
+    </div>
 
+    <div>
+        
+            <% if @user == current_user %>
+        
 
-    <p><%= link_to "Edit Review", edit_wine_review_path(@review) %> </p>
-    <p><%= link_to 'Destroy', @review, method: :delete %></p>
+            <p><%= link_to "Edit Review", edit_wine_review_path(@review) %></p>
+            <p><%= link_to 'Destroy', @review, method: :delete %></p>
+
+        
+
+        <% end %>
+    
+    </div>
+
 </div>
