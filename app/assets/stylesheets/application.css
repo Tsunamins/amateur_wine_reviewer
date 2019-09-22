@@ -419,6 +419,30 @@ font-family: 'Poiret One', cursive; */
         background-color: rgb(248, 232, 204);
       }
 
+      #reviewsbuttons {
+        padding: 10px;
+        border-radius: 25px;
+        background-color: grey;
+        width: 100px;
+        font-weight: bold;
+        margin-left: 40%;
+
+
+      }
+
+      #reviewsbuttons a {
+        text-decoration: none;
+      }
+
+      #reviewsbuttons a:visited {
+        text-decoration: none;
+        color: black;
+      }
+
+      #likebutton {
+
+      }
+
 
 #likedreviews {
   padding: 20px;
