@@ -1,4 +1,6 @@
 
+
+
 <div class="userview">
     <div id="userdetails">
         <p>Username: <%= @user.username %></p>
@@ -26,4 +28,18 @@
 
         <% end %>
     </div>
+</div>
+
+<div class="sidebarright">
+    <h3><%=@user.username%>'s Favorite Reviews: </h3>
+    <ul>
+    
+    <% @user.likes.uniq.each do |l| %>
+        <li>
+        <p><%= link_to l.title, review_path(l) %></p>
+    
+    
+        </li>
+        <%end%>
+    </ul>
 </div>

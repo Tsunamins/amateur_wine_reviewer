@@ -1,6 +1,6 @@
 <%= render partial: 'layouts/errors', locals: {object: @review}  %>
 <div class="userview">
-    <h1> Review the Wine </h1>
+    <h1> Review <%= @wine.wine_name %></h1>
         
  
     <%= render partial: 'form'%>

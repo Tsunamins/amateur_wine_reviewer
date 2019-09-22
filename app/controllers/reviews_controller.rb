@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     end 
 
     def show 
-        
+        @wine = Wine.find_by_id(params[:wine_id])
         @review = Review.find_by_id(params[:id])
     end 
 
