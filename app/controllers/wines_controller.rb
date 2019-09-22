@@ -1,4 +1,6 @@
 class WinesController < ApplicationController
+    before_action :user_not_logged_in
+    
     def show
         @wine = Wine.find(params[:id])
         @wine_reviews = @wine.reviews

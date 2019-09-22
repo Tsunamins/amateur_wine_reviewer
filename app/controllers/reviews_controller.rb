@@ -1,5 +1,7 @@
 
 class ReviewsController < ApplicationController
+    before_action :user_not_logged_in
+
     def index 
         @user = User.find_by(id: params[:id])
         @reviews = Review.all 
@@ -34,6 +36,10 @@ class ReviewsController < ApplicationController
     def edit
         @user = current_user
         @review = Review.find(params[:id])
+        if @user.id != @review.user_id
+            redirect_to user_path(@user)
+        end
+        
     end 
        
     def like 

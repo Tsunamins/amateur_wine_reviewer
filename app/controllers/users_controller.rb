@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :user_not_logged_in, only: [:new, :create, :edit, :update]
+    skip_before_action :user_not_logged_in, only: [:new, :create]
     
     def new 
         @user = User.new
