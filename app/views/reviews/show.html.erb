@@ -34,7 +34,8 @@
 
     <div>
         
-            <% if @user == current_user %>
+            <% if @review.user_id == current_user.id %>
+            
         
 
             <p><%= link_to "Edit Review", edit_wine_review_path(@review) %></p>
