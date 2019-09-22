@@ -1,6 +1,6 @@
 
 <%= form_tag("/wines", method: "get") do %>
-                <%= select_tag "rose", options_for_select(["rose"]), prompt: 'Filter by style or type of wine' %>
+                <%= select_tag "style", options_for_select(["rose", "bordeaux", "burgundy", "meritage", "sparkling", "red", "white"]), prompt: 'Filter by style or type of wine' %>
  
                 <%= submit_tag "Filter" %>
                 <% end %>

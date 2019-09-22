@@ -16,7 +16,12 @@ class Wine < ActiveRecord::Base
     validates :story, length: { maximum: 1000 }
     validate :wine_and_vintage 
 
-    scope :rose, -> { where(style: 'rose') }
+   
+    
+    scope :styles, -> (style) {where(style: style)}
+    def self.styles(style)
+        where(style: style)
+    end 
    
 
     def wine_and_vintage 
