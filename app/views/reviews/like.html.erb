@@ -2,8 +2,10 @@
 <h1>the liked reviews page</h1>
 <ul>
 <% current_user.likes.uniq.each do |l| %>
-<li>
-    <%= link_to l.title, review_path(l) %>
+<li id="likereviewsli">
+    <p id="reviewsbuttons">View: <%= link_to l.title, review_path(l) %></p>
+    
+    
 </li>
 <%end%>
 </ul>

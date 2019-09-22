@@ -439,19 +439,38 @@ font-family: 'Poiret One', cursive; */
         color: black;
       }
 
-      #likebutton {
+      #likebutton, #unlikebutton {
+        padding: 10px;
+        border-radius: 25px;
+        background-color: grey;
+        width: 100px;
+        font-weight: bold;
+        margin-left: 40%;
+        text-decoration: none;
+      }
 
+      #likebutton a:visited, #unlikebutton a:visited {
+        text-decoration: none;
+        color: black;
       }
 
 
 #likedreviews {
   padding: 20px;
   background-color: grey;
+
  
 }
 
 #likedreviews li {
   padding: 20px;
+  margin: 10px;
+ 
+}
+
+#likedreviews li > p {
+ width: 200px;
+ 
 }
 
       
