@@ -9,7 +9,8 @@
             <div class="glass">
                 <p class="glasslabel"><%= details.username %></p>
                 <p class="glassfav"><%= details.favorite_wine %></p>
-                <p><%= link_to "View User Activities", user_path(details)%> </p>
+                <p><%= link_to "View User Profile", user_path(details)%> </p>
+                <%= link_to "View User Reviews", user_reviews_path(details) %>
                 
             </div>
         </div>
