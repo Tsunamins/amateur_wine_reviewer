@@ -4,10 +4,22 @@ class ReviewsController < ApplicationController
 
     def index 
         @user = User.find_by(id: params[:id])
-        @reviews = Review.all 
-        
+                   
         @review = Review.find_by_id(params[:id])
+
+        if params[:wine_id]
+            @wine = Wine.find_by(id: params[:wine_id])
+            @reviews = @wine.reviews
+        elsif params[:user_id]
+            @user = Wine.find_by(id: params[:user_id])
+            @reviews = @user.reviews
+        else 
+            @reviews = Review.all 
+        end
+        
     end 
+
+
 
     def show 
         @wine = Wine.find_by_id(params[:wine_id])
