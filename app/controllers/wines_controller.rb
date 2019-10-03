@@ -25,8 +25,7 @@ class WinesController < ApplicationController
     def create
         @wine = Wine.new(wine_params)
         if @wine.save 
-            #redirect_to @wine
-            #temporary below
+            
             redirect_to wine_path(@wine)
         else
             render :new 
@@ -52,7 +51,7 @@ class WinesController < ApplicationController
     private 
 
     def wine_params
-        params.require(:wine).permit([:wine_name, :vintage, :vineyard, :winemaker, :story, :grape, :region, :style, :alcohol])
+        params.require(:wine).permit([:wine_name, :vintage, :vineyard, :winemaker, :story, :grape, :region, :style, :alcohol, :store_id])
     end
 
 end 
