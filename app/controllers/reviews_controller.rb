@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
             @wine = Wine.find_by(id: params[:wine_id])
             @reviews = @wine.reviews
         elsif params[:user_id]
-            @user = Wine.find_by(id: params[:user_id])
+            @user = User.find_by(id: params[:user_id])
             @reviews = @user.reviews
         else 
             @reviews = Review.all 
