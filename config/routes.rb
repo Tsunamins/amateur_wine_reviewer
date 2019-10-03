@@ -12,24 +12,34 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+
+
   resources :wines do 
     resources :reviews
   end 
 
   resources :reviews 
+  
 
   resources :users do 
     resources :reviews 
   end 
 
-
-
   resources :users
+
+  resources :likes
+  
+  resources :reviews do 
+    resources :likes
+  end
 
   resources :reviews do 
     put :like, on: :member
     get :like, on: :member
   end 
+
+  
+
 
   #google login route
   get '/auth/:provider/callback' => 'sessions#omniauth'

@@ -1,0 +1,30 @@
+<% if params[:review_id] %>
+    <div>
+
+        <ul>
+        <h1>Review Liked By</h1>
+        <% @likes.each do |details| %>
+        <li class="likesviews">
+          <div>
+                <p><%= details.username %></p>
+                <p><%= link_to "View User Profile", user_path(details.id)%> </p>
+                          
+             
+          </div>
+        </li>
+    
+        <%end%>
+    </ul>
+
+</div>
+<%else%>
+
+<div class="userview">
+
+    <h1>Review Likes</h1>
+        <p><%=@likes.count%> reviews have been liked on amateur wine reviewer</p>
+        <p><%=link_to "Read Reviews", reviews_path%></p>
+ 
+
+
+<%end%>
