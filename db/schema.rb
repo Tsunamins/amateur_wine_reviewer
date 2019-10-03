@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20) do
+ActiveRecord::Schema.define(version: 22) do
 
   create_table "liked_reviews", force: :cascade do |t|
     t.integer "user_id"
@@ -56,6 +56,15 @@ ActiveRecord::Schema.define(version: 20) do
     t.index ["wine_id"], name: "index_reviews_on_wine_id"
   end
 
+  create_table "stores", force: :cascade do |t|
+    t.string "store_name"
+    t.string "location"
+    t.integer "wine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["wine_id"], name: "index_stores_on_wine_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
@@ -82,6 +91,8 @@ ActiveRecord::Schema.define(version: 20) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.integer "store_id"
+    t.index ["store_id"], name: "index_wines_on_store_id"
     t.index ["user_id"], name: "index_wines_on_user_id"
   end
 
